@@ -1,0 +1,11 @@
+---
+description: Tailwind CSS の使い方
+globs: "**/*.{tsx,css}"
+alwaysApply: false
+---
+
+# Tailwind
+
+- ユーティリティクラスを優先する。共通パターンは `@layer components` でコンポーネントクラスとして定義可。
+- クラス名は読みやすい順（レイアウト → 余白 → 文字 → 色・背景など）で並べる。
+- カスタム値は `@theme` または tailwind の設定で拡張する。インライン style は最小限に。
