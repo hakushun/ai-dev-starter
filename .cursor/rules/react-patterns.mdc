@@ -1,0 +1,12 @@
+---
+description: React コンポーネントと Jotai のパターン
+globs: "**/*.tsx"
+alwaysApply: false
+---
+
+# React パターン
+
+- 関数コンポーネントのみ使用する。
+- 再利用ロジックはカスタムフックに切り出す。
+- 状態は Jotai の atom で管理。`src/store/` に atom を定義し、コンポーネントでは `useAtom` / `useSetAtom` を使用する。
+- コンポーネントは `src/components/` に配置。ページは `src/pages/`、ルート定義は `src/routeTree.ts`。

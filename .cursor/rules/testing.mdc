@@ -1,0 +1,11 @@
+---
+description: Vitest / Storybook / Playwright の使い分けとパターン
+globs: "**/*.{test,spec,stories}.{ts,tsx}"
+alwaysApply: false
+---
+
+# テスト
+
+- **単体**: Vitest + Testing Library。`src/**/*.test.tsx`。コンポーネントは `render` し、`within(container)` でスコープしてクエリする。Jotai は `Provider` + `createStore()` でラップする。
+- **Storybook**: `*.stories.tsx`。デコレータで `Provider` を渡す。Tailwind は `.storybook/preview.ts` で `../src/index.css` を読み込む。
+- **E2E**: Playwright。`e2e/*.spec.ts`。`baseURL: http://localhost:5173`。`pnpm run e2e` で dev サーバー起動後に実行される。
